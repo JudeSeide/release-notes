@@ -1,0 +1,40 @@
+{
+    "name": "jude/release-notes",
+    "description": "Generate release notes from Jira",
+    "license": "MIT",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Jude Seide",
+            "email": "jude.seide@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.3.11",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "chobie/jira-api-restclient": "^2.0@dev",
+        "nesbot/carbon": "^2.32",
+        "pelago/emogrifier": "^3.1",
+        "symfony/console": "^5.0",
+        "vlucas/phpdotenv": "^4.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "scripts": {
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ]
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "optimize-autoloader": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
